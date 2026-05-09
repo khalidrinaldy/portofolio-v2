@@ -1,0 +1,93 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Company {
+  id              Int              @id @default(autoincrement())
+  name            String
+  url             String
+  logo            String
+  workExperiences WorkExperience[]
+  projects        Project[]
+
+  @@map("companies")
+}
+
+model WorkExperience {
+  id            Int                   @id @default(autoincrement())
+  company_id    Int
+  position_name String
+  start_date    DateTime
+  end_date      DateTime?
+  points        WorkExperiencePoint[]
+  skills        String[]
+  company       Company               @relation(fields: [company_id], references: [id])
+
+  @@map("work_experiences")
+}
+
+model WorkExperiencePoint {
+  id                 Int            @id @default(autoincrement())
+  work_experience_id Int
+  description        String
+  work_experience    WorkExperience @relation(fields: [work_experience_id], references: [id])
+
+  @@map("work_experience_points")
+}
+
+model Project {
+  id            Int            @id @default(autoincrement())
+  name          String
+  company_id    Int
+  company       Company        @relation(fields: [company_id], references: [id])
+  start_date    DateTime
+  end_date      DateTime?
+  skills        String[]
+  projectPoints ProjectPoint[]
+  key_impact    String?
+
+  @@map("projects")
+}
+
+model ProjectPoint {
+  id          Int     @id @default(autoincrement())
+  project_id  Int
+  description String
+  project     Project @relation(fields: [project_id], references: [id])
+
+  @@map("project_points")
+}
+
+model Education {
+  id              Int      @id @default(autoincrement())
+  start_year      Int
+  end_year        Int?
+  degree          String
+  university      String
+  university_logo String
+  description     String
+  gpa             Float
+  max_gpa         Float
+  courseworks     String[]
+
+  @@map("educations")
+}
+
+model Skill {
+  id     Int      @id @default(autoincrement())
+  code   String
+  name   String
+  skills String[]
+
+  @@map("skills")
+}
