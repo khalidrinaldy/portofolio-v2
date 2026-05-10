@@ -15,7 +15,7 @@ export default function ProfileInfoSection() {
       <div className="relative w-full">
         <Image
           src="/images/img-beach-night.avif"
-          className="w-full h-70 object-cover object-[center_40%]"
+          className="w-full h-55 object-cover object-[center_40%]"
           alt="Profile"
           width={100}
           height={100}
