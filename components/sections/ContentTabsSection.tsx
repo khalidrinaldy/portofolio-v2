@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Tabs, TabsList, TabsTrigger } from "../ui/tabs";
+import { Education, Project, Skill, WorkExperience } from "@/lib/types";
 
 const tabs = [
   { value: "experiences", label: "Work Experience" },
@@ -10,6 +11,13 @@ const tabs = [
   { value: "skills", label: "Skills" },
   { value: "education", label: "Education" },
 ];
+
+interface props {
+  workExperiences: WorkExperience[];
+  projects: Project[];
+  skills: Skill[];
+  educations: Education[];
+}
 
 export default function ContentTabsSection() {
   const [active, setActive] = useState("experiences");
