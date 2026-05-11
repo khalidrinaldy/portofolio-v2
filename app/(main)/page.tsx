@@ -18,7 +18,12 @@ export default async function HomePage() {
   return (
     <main className="flex flex-col gap-4 items-stretch w-full">
       <ProfileInfoSection />
-      <ContentTabsSection />
+      <ContentTabsSection
+        workExperiences={workExperiences}
+        projects={projects}
+        skills={skills}
+        educations={educations}
+      />
     </main>
   );
 }

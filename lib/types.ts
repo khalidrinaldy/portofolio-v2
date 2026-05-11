@@ -3,8 +3,8 @@ export interface Company {
   name: string;
   url: string;
   logo: string;
-  workExperiences: WorkExperience[];
-  projects: Project[];
+  // workExperiences: WorkExperience[];
+  // projects: Project[];
 }
 
 export interface WorkExperience {
@@ -22,26 +22,24 @@ export interface WorkExperiencePoint {
   id: number;
   work_experience_id: number;
   description: string;
-  work_experience: WorkExperience;
 }
 
 export interface Project {
   id: number;
   name: string;
   company_id: number;
-  company: Company;
   start_date: Date;
   end_date: Date | null;
   skills: string[];
   projectPoints: ProjectPoint[];
   key_impact: string | null;
+  company: Company;
 }
 
 export interface ProjectPoint {
   id: number;
   project_id: number;
   description: string;
-  project: Project;
 }
 
 export interface Education {

@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Tabs, TabsList, TabsTrigger } from "../ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { Education, Project, Skill, WorkExperience } from "@/lib/types";
+import WorkExperienceContent from "./WorkExperienceContent";
 
 const tabs = [
   { value: "experiences", label: "Work Experience" },
@@ -19,7 +20,12 @@ interface props {
   educations: Education[];
 }
 
-export default function ContentTabsSection() {
+export default function ContentTabsSection({
+  workExperiences,
+  projects,
+  skills,
+  educations,
+}: props) {
   const [active, setActive] = useState("experiences");
 
   return (
@@ -41,6 +47,9 @@ export default function ContentTabsSection() {
           </TabsTrigger>
         ))}
       </TabsList>
+      <TabsContent value="experiences">
+        <WorkExperienceContent workExperiences={workExperiences} />
+      </TabsContent>
     </Tabs>
   );
 }
