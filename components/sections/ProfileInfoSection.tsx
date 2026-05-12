@@ -91,7 +91,7 @@ export default function ProfileInfoSection() {
         </p>
 
         {/*Work Location*/}
-        <div className="flex flex-row gap-4 items-center">
+        <div className="flex flex-col md:flex-row gap-4 md:items-center">
           <div className="flex flex-row gap-1 items-center">
             <LucideMapPin className="w-4 h-4" />
             <p className="text-body-1 text-light-grey">Jakarta, Indonesia</p>

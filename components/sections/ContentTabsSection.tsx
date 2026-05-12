@@ -7,7 +7,7 @@ import { Education, Project, Skill, WorkExperience } from "@/lib/types";
 import WorkExperienceContent from "./WorkExperienceContent";
 
 const tabs = [
-  { value: "experiences", label: "Work Experience" },
+  { value: "experiences", label: "Experiences" },
   { value: "projects", label: "Projects" },
   { value: "skills", label: "Skills" },
   { value: "education", label: "Education" },
@@ -31,7 +31,7 @@ export default function ContentTabsSection({
   return (
     <Tabs value={active} onValueChange={setActive} className="w-full">
       <TabsList
-        className="w-full flex flex-row justify-between bg-background"
+        className="w-full flex flex-row justify-between bg-background overflow-x-auto"
         variant="line"
       >
         {tabs.map((tab) => (
@@ -40,7 +40,7 @@ export default function ContentTabsSection({
             {active === tab.value && (
               <motion.div
                 layoutId="underline"
-                className="absolute inset-x-8 bottom-[-5px] h-1 bg-primary rounded-full"
+                className="absolute inset-x-4 bottom-[-5px] h-1 bg-primary rounded-full"
                 transition={{ type: "spring", stiffness: 400, damping: 30 }}
               />
             )}
