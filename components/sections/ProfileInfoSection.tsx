@@ -122,7 +122,7 @@ export default function ProfileInfoSection() {
 function SocialMediaItem({ url, icon }: { url: string; icon: ReactNode }) {
   return (
     <Link href={url} target="_blank">
-      <div className="p-2 w-auto h-auto rounded-full border-1 border-light-grey text-light-grey">
+      <div className="p-2 w-auto h-auto rounded-full border-1 border-light-grey text-light-grey hover:bg-light-grey/15">
         {icon}
       </div>
     </Link>
