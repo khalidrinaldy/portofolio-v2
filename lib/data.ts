@@ -31,11 +31,16 @@ export const getProjects = unstable_cache(
   async () =>
     db.project.findMany({
       orderBy: {
-        start_date: "desc",
+        id: "desc",
       },
       include: {
         company: true,
         projectPoints: true,
+        projectGalleries: {
+          orderBy: {
+            id: "desc",
+          },
+        },
       },
     }),
   ["projects"],

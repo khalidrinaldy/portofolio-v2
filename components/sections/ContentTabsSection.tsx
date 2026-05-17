@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { Education, Project, Skill, WorkExperience } from "@/lib/types";
 import WorkExperienceContent from "./WorkExperienceContent";
+import ProjectContent from "./ProjectContent";
 
 const tabs = [
   { value: "experiences", label: "Experiences" },
@@ -49,6 +50,10 @@ export default function ContentTabsSection({
       </TabsList>
       <TabsContent value="experiences">
         <WorkExperienceContent workExperiences={workExperiences} />
+      </TabsContent>
+
+      <TabsContent value="projects">
+        <ProjectContent projects={projects} />
       </TabsContent>
     </Tabs>
   );

@@ -32,6 +32,7 @@ export interface Project {
   end_date: Date | null;
   skills: string[];
   projectPoints: ProjectPoint[];
+  projectGalleries: ProjectGallery[];
   key_impact: string | null;
   company: Company;
 }
@@ -61,3 +62,11 @@ export interface Skill {
   name: string;
   skills: string[];
 }
+
+export interface ProjectGallery {
+  id: number;
+  project_id: number;
+  image_url: string;
+  type: ScreenType | null;
+}
+export type ScreenType = "DESKTOP" | "MOBILE";

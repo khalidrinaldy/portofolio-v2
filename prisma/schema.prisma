@@ -46,15 +46,16 @@ model WorkExperiencePoint {
 }
 
 model Project {
-  id            Int            @id @default(autoincrement())
-  name          String
-  company_id    Int
-  company       Company        @relation(fields: [company_id], references: [id])
-  start_date    DateTime
-  end_date      DateTime?
-  skills        String[]
-  projectPoints ProjectPoint[]
-  key_impact    String?
+  id               Int                @id @default(autoincrement())
+  name             String
+  company_id       Int
+  company          Company            @relation(fields: [company_id], references: [id])
+  start_date       DateTime
+  end_date         DateTime?
+  skills           String[]
+  projectPoints    ProjectPoint[]
+  key_impact       String?
+  projectGalleries ProjectGalleries[]
 
   @@map("projects")
 }
@@ -90,4 +91,19 @@ model Skill {
   skills String[]
 
   @@map("skills")
+}
+
+model ProjectGalleries {
+  id         Int         @id @default(autoincrement())
+  project_id Int
+  image_url  String
+  project    Project     @relation(fields: [project_id], references: [id])
+  type       ScreenType?
+
+  @@map("project_galleries")
+}
+
+enum ScreenType {
+  DESKTOP
+  MOBILE
 }

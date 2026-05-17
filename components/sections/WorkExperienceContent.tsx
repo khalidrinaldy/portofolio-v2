@@ -5,6 +5,7 @@ import { getDifferenceDate } from "@/lib/utils";
 import Link from "next/link";
 import { LucideExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
+import { SkillChip } from "../ui/chip";
 
 export default function WorkExperienceContent({
   workExperiences,
@@ -64,6 +65,13 @@ function WorkExperienceItem({ data }: { data: WorkExperience }) {
             <p key={index} className="text-body-1 text-light-grey">
               • {point.description}
             </p>
+          ))}
+        </div>
+
+        {/*Skills*/}
+        <div className="flex flex-row gap-2">
+          {data.skills.map((skill, index) => (
+            <SkillChip key={index} label={skill} />
           ))}
         </div>
       </div>
