@@ -168,3 +168,28 @@
     @apply font-sans;
   }
 }
+
+@layer components {
+  .embla {
+    --slide-size: 100%;
+    --slide-spacing: 40px;
+  }
+
+  .embla__viewport {
+    overflow: hidden;
+  }
+
+  .embla__container {
+    display: flex;
+    width: auto;
+    max-width: 1200px;
+    touch-action: pan-y pinch-zoom;
+    margin-left: calc(var(--slide-spacing) * -1);
+  }
+
+  .embla__slide {
+    flex: 0 0 var(--slide-size);
+    min-width: 0;
+    padding-left: var(--slide-spacing);
+  }
+}

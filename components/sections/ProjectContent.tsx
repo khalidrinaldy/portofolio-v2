@@ -70,6 +70,7 @@ function ProjectItem({ data }: { data: Project }) {
             {Array.from({ length: 5 }).map((_, index) => (
               <CarouselItem key={index} className="basis-1/2 lg:basis-1/3">
                 <DialogCarousel
+                  startIndex={index}
                   trigger={
                     <Image
                       src={data.projectGalleries.at(index)?.image_url ?? ""}
