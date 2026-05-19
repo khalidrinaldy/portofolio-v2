@@ -6,6 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { Education, Project, Skill, WorkExperience } from "@/lib/types";
 import WorkExperienceContent from "./WorkExperienceContent";
 import ProjectContent from "./ProjectContent";
+import SkillContent from "./SkillContent";
 
 const tabs = [
   { value: "experiences", label: "Experiences" },
@@ -54,6 +55,10 @@ export default function ContentTabsSection({
 
       <TabsContent value="projects">
         <ProjectContent projects={projects} />
+      </TabsContent>
+
+      <TabsContent value="skills">
+        <SkillContent skills={skills} />
       </TabsContent>
     </Tabs>
   );

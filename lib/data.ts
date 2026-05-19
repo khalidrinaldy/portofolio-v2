@@ -51,7 +51,12 @@ export const getProjects = unstable_cache(
 
 // get all skills
 export const getSkills = unstable_cache(
-  async () => db.skill.findMany(),
+  async () =>
+    db.skill.findMany({
+      orderBy: {
+        id: "desc",
+      },
+    }),
   ["skills"],
   {
     revalidate: REVALIDATE_DURATION,
