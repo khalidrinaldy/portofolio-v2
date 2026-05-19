@@ -7,12 +7,13 @@ import { Education, Project, Skill, WorkExperience } from "@/lib/types";
 import WorkExperienceContent from "./WorkExperienceContent";
 import ProjectContent from "./ProjectContent";
 import SkillContent from "./SkillContent";
+import EducationContent from "./EducationContent";
 
 const tabs = [
   { value: "experiences", label: "Experiences" },
   { value: "projects", label: "Projects" },
   { value: "skills", label: "Skills" },
-  { value: "education", label: "Education" },
+  { value: "educations", label: "Education" },
 ];
 
 interface props {
@@ -59,6 +60,10 @@ export default function ContentTabsSection({
 
       <TabsContent value="skills">
         <SkillContent skills={skills} />
+      </TabsContent>
+
+      <TabsContent value="educations">
+        <EducationContent educations={educations} />
       </TabsContent>
     </Tabs>
   );
