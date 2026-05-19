@@ -182,7 +182,7 @@
   .embla__container {
     display: flex;
     width: auto;
-    max-width: 1200px;
+    /*max-width: 1200px;*/
     touch-action: pan-y pinch-zoom;
     margin-left: calc(var(--slide-spacing) * -1);
   }

@@ -17,11 +17,13 @@ function SkillItem({ data }: { data: Skill }) {
       {/*name*/}
       <div className="flex flex-row gap-2 items-center">
         {data.code === "mobile" ? (
-          <LucideSmartphone className="h-5 text-primary" />
+          <LucideSmartphone className="h-4 md:h-5 text-primary" />
         ) : (
-          <LucideMonitorSmartphone className="h-5 text-primary" />
+          <LucideMonitorSmartphone className="h-4 md:h-5 text-primary" />
         )}
-        <p className="text-heading-5 font-bold text-white">{data.name}</p>
+        <p className="text-heading-6 md:text-heading-5 font-bold text-white">
+          {data.name}
+        </p>
       </div>
 
       {/*Skills*/}
@@ -29,10 +31,10 @@ function SkillItem({ data }: { data: Skill }) {
         {data.skills.map((skill, index) => (
           <div
             key={index}
-            className="px-5 py-3 flex flex-row gap-3 items-center bg-[#1B1B1B] border-1 border-[#474747]/10 rounded-full"
+            className="px-4 py-2 md:px-5 md:py-3 flex flex-row gap-3 items-center bg-[#1B1B1B] border-1 border-[#474747]/10 rounded-full"
           >
-            <div className="h-2 w-2 rounded-full bg-white"></div>
-            <p className="text-heading-6 font-medium text-white">{skill}</p>
+            <div className="h-1 w-1 md:h-2 md:w-2 rounded-full bg-white"></div>
+            <p className="text-sm md:text-heading-6 font-medium text-white">{skill}</p>
           </div>
         ))}
       </div>

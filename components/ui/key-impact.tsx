@@ -8,12 +8,12 @@ export function KeyImpact({ label }: { label: string }) {
         alt={label}
         height={100}
         width={100}
-        className="w-10 h-10"
+        className="md:w-10 md:h-10 h-8 w-8"
       />
 
       <div className="flex flex-col items-stretch">
-        <p className="text-body-3 text-grey">Key Impact</p>
-        <p className="text-body-2 text-white">{label}</p>
+        <p className="text-body-4 md:text-body-3 text-grey">Key Impact</p>
+        <p className="text-body-3 md:text-body-2 text-white">{label}</p>
       </div>
     </div>
   );

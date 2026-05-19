@@ -62,7 +62,7 @@ export function DialogCarousel({
           damping: 15,
           mass: 0.5,
         }}
-        className="w-auto !max-w-[80dvw] p-0 bg-transparent border-transparent ring-transparent gap-12"
+        className="w-auto !max-w-none md:max-w-[90dvw]! p-0 bg-transparent border-transparent ring-transparent gap-12"
       >
         <DialogTitle></DialogTitle>
         <div className="relative embla">
@@ -73,7 +73,7 @@ export function DialogCarousel({
                   key={index}
                   src={data[index]}
                   alt={`Slide ${index + 1}`}
-                  width={1200}
+                  width={1600}
                   height={1200}
                   className="embla__slide object-contain w-full rounded-lg"
                 />
@@ -83,8 +83,9 @@ export function DialogCarousel({
 
           {/*Index*/}
           <div className="absolute -top-12 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-neutral-950! rounded-lg border">
-            <p className="font-semibold">
-              <span className="text-dark-grey">{selectedSnap + 1}</span> / {data.length}
+            <p className="font-semibold text-body-4 md:text-body-3">
+              <span className="text-dark-grey">{selectedSnap + 1}</span> /{" "}
+              {data.length}
             </p>
           </div>
 
@@ -94,7 +95,7 @@ export function DialogCarousel({
             variant={"outline"}
             className="absolute -top-20 -right-15 p-2 h-auto rounded-lg bg-neutral-950! hover:bg-neutral-800! hover:cursor-pointer"
           >
-            <LucideX className="h-6! w-6!" />
+            <LucideX className="md:h-6! md:w-6! h-4! h-4" />
           </Button>
 
           <Button
@@ -102,19 +103,19 @@ export function DialogCarousel({
             variant={"outline"}
             className="absolute -left-20 top-1/2 -translate-y-1/2 p-3 h-auto rounded-xl bg-neutral-950! hover:bg-neutral-800! hover:cursor-pointer"
           >
-            <LucideChevronLeft className="h-8! w-8!" />
+            <LucideChevronLeft className="md:h-8! md:w-8! h-4! h-4" />
           </Button>
           <Button
             onClick={goToNext}
             variant={"outline"}
             className="absolute -right-20 top-1/2 -translate-y-1/2 z-120 p-3 h-auto rounded-xl bg-neutral-950! hover:bg-neutral-800! hover:cursor-pointer"
           >
-            <LucideChevronRight className="h-8! w-8!" />
+            <LucideChevronRight className="md:h-8! md:w-8! h-4! h-4" />
           </Button>
         </div>
 
         {/*Thumnails*/}
-        <div className="flex flex-row justify-center items-center gap-8">
+        <div className="grid grid-cols-3 lg:flex lg:flex-wrap lg:flex-row justify-center items-center gap-2 lg:gap-8">
           {Array.from({ length: data.length }).map((_, index) => (
             <Image
               onClick={() => goTo(index)}
@@ -123,7 +124,7 @@ export function DialogCarousel({
               alt={`Slide ${index + 1}`}
               width={100}
               height={100}
-              className={`object-contain w-auto max-h-15 rounded-lg hover:cursor-pointer ${index === selectedSnap ? "border-2 border-blue-500" : ""}`}
+              className={`object-contain w-auto max-h-10 md:max-h-15 rounded-lg hover:cursor-pointer ${index === selectedSnap ? "border-2 border-blue-500" : ""}`}
             />
           ))}
         </div>

@@ -38,13 +38,15 @@ function ProjectItem({ data }: { data: Project }) {
         </div>
 
         {/*Project Name*/}
-        <p className="text-heading-3 text-white tracking-tight">{data.name}</p>
+        <p className="text-heading-4 md:text-heading-3 text-white tracking-tight">
+          {data.name}
+        </p>
       </div>
 
       {/*Project Points*/}
       <div className="flex flex-col gap-2 px-1">
         {data.projectPoints.map((point, index) => (
-          <p key={index} className="text-body-1 text-light-grey">
+          <p key={index} className="text-body-2 md:text-body-1 text-light-grey">
             • {point.description}
           </p>
         ))}
@@ -58,7 +60,7 @@ function ProjectItem({ data }: { data: Project }) {
           }}
           className="w-full pt-10"
         >
-          <p className="absolute top-0 left-0 left-auto translate-y-0 text-body-2 text-grey tracking-widest">
+          <p className="absolute top-1 left-0 left-auto translate-y-0 text-body-3 md:text-body-2 text-grey tracking-widest">
             GALLERY{" "}
             <span className="opacity-70">
               • {data.projectGalleries.length} SHOTS
@@ -68,20 +70,42 @@ function ProjectItem({ data }: { data: Project }) {
           <CarouselNext className="top-0 right-0 translate-y-0" />
           <CarouselContent className="">
             {Array.from({ length: 5 }).map((_, index) => (
-              <CarouselItem key={index} className="basis-1/2 lg:basis-1/3">
-                <DialogCarousel
-                  startIndex={index}
-                  trigger={
-                    <Image
-                      src={data.projectGalleries.at(index)?.image_url ?? ""}
-                      alt=""
-                      width={50}
-                      height={50}
-                      className="w-full h-50 aspect-video object-fit rounded-sm"
-                    />
-                  }
-                  data={data.projectGalleries.map((item) => item.image_url)}
-                />
+              <CarouselItem
+                key={index}
+                className="basis-1/1 md:basis-1/2 lg:basis-1/3"
+              >
+                {/* mobile: open image in new tab */}
+                <a
+                  href={data.projectGalleries.at(index)?.image_url ?? ""}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block lg:hidden"
+                >
+                  <Image
+                    src={data.projectGalleries.at(index)?.image_url ?? ""}
+                    alt=""
+                    width={50}
+                    height={50}
+                    className="w-full h-50 aspect-video object-fit rounded-sm"
+                  />
+                </a>
+
+                {/* desktop: open dialog carousel */}
+                <div className="hidden lg:block">
+                  <DialogCarousel
+                    startIndex={index}
+                    trigger={
+                      <Image
+                        src={data.projectGalleries.at(index)?.image_url ?? ""}
+                        alt=""
+                        width={50}
+                        height={50}
+                        className="w-full h-50 aspect-video object-fit rounded-sm"
+                      />
+                    }
+                    data={data.projectGalleries.map((item) => item.image_url)}
+                  />
+                </div>
               </CarouselItem>
             ))}
           </CarouselContent>
@@ -89,7 +113,7 @@ function ProjectItem({ data }: { data: Project }) {
       )}
 
       {/*Skills*/}
-      <div className="flex flex-row gap-2">
+      <div className="flex flex-wrap gap-2">
         {data.skills.map((skill, index) => (
           <SkillChip key={index} label={skill} />
         ))}

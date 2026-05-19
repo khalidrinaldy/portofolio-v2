@@ -15,14 +15,14 @@ export default function ProfileInfoSection() {
       <div className="relative w-full">
         <Image
           src="/images/img-beach-night.avif"
-          className="w-full h-55 object-cover object-[center_40%]"
+          className="w-full h-40 md:h-55 object-cover object-[center_40%]"
           alt="Profile"
           width={100}
           height={100}
         />
 
         {/* Profile Image */}
-        <div className="absolute h-32 w-32 bottom-[-20%] ml-5 rounded-full bg-red-500 border-4 border-background shadow-2xl">
+        <div className="absolute h-28 w-28 bottom-[-30%] md:h-32 md:w-32 md:bottom-[-20%] ml-5 rounded-full bg-red-500 border-4 border-background shadow-2xl">
           <Image
             src="/images/img-profile.png"
             className="w-full h-full rounded-full object-cover object-[center_65%]"
@@ -38,14 +38,14 @@ export default function ProfileInfoSection() {
         <div className="mt-1 w-full flex flex-row gap-3 justify-end items-center">
           <SocialMediaItem
             url={MAIL_URL}
-            icon={<LucideMail className="h-5 w-5" />}
+            icon={<LucideMail className="h-4 w-4 md:h-5 md:w-5" />}
           />
           <SocialMediaItem
             url={LINKEDIN_URL}
             icon={
               <Image
                 src="/icons/ic_linkedin.svg"
-                className="h-5 w-5"
+                className="h-4 w-4 md:h-5 md:w-5"
                 alt="linkedin"
                 width={100}
                 height={100}
@@ -57,7 +57,7 @@ export default function ProfileInfoSection() {
             icon={
               <Image
                 src="/icons/ic_github.svg"
-                className="h-5 w-5"
+                className="h-4 w-4 md:h-5 md:w-5"
                 alt="linkedin"
                 width={100}
                 height={100}
@@ -69,7 +69,9 @@ export default function ProfileInfoSection() {
         {/*Name & Username*/}
         <div className="flex flex-col gap-0.2 items-stretch">
           <div className="flex flex-row gap-1 items-center justify-start">
-            <p className="text-heading-3 font-bold ">Khalid Rinaldy</p>
+            <p className="text-heading-4 md:text-heading-3 font-bold ">
+              Khalid Rinaldy
+            </p>
             <Image
               src="/icons/ic_verified.svg"
               className="h-4 w-4"
@@ -78,11 +80,13 @@ export default function ProfileInfoSection() {
               height={100}
             />
           </div>
-          <p className="text-heading-5 text-grey">@khalidrinaldy</p>
+          <p className="text-heading-6 md:text-heading-5 text-grey">
+            @khalidrinaldy
+          </p>
         </div>
 
         {/*Description*/}
-        <p className="text-body-1 text-light-grey">
+        <p className="text-body-2 md:text-body-1 text-light-grey">
           Results-driven Frontend Developer with 4 years of experience building
           cross-platform mobile applications and modern web interfaces.
           Proficient in Flutter for mobile development and Next.js for scalable,
@@ -93,12 +97,14 @@ export default function ProfileInfoSection() {
         {/*Work Location*/}
         <div className="flex flex-col md:flex-row gap-4 md:items-center">
           <div className="flex flex-row gap-1 items-center">
-            <LucideMapPin className="w-4 h-4" />
-            <p className="text-body-1 text-light-grey">Jakarta, Indonesia</p>
+            <LucideMapPin className="md:w-4 md:h-4 w-3 h-3" />
+            <p className="text-body-2 md:text-body-1 text-light-grey">
+              Jakarta, Indonesia
+            </p>
           </div>
           <div className="flex flex-row gap-1 items-center">
-            <LucideCalendarDays className="w-4 h-4" />
-            <p className="text-body-1 text-light-grey">
+            <LucideCalendarDays className="md:w-4 md:h-4 w-3 h-3" />
+            <p className="text-body-2 md:text-body-1 text-light-grey">
               Working since February 2022
             </p>
           </div>
@@ -106,11 +112,11 @@ export default function ProfileInfoSection() {
 
         {/*Projects*/}
         <div className="flex flex-row gap-4 items-center">
-          <p className="text-body-1 text-light-grey">
+          <p className="text-body-2 md:text-body-1 text-light-grey">
             <span className="text-white font-semibold">4+</span> Years of
             Experience
           </p>
-          <p className="text-body-1 text-light-grey">
+          <p className="text-body-2 md:text-body-1 text-light-grey">
             <span className="text-white font-semibold">7+</span> Projects
           </p>
         </div>
