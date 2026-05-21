@@ -84,8 +84,8 @@ function ProjectItem({ data }: { data: Project }) {
                   <Image
                     src={data.projectGalleries.at(index)?.image_url ?? ""}
                     alt=""
-                    width={50}
-                    height={50}
+                    width={1200}
+                    height={1200}
                     className="w-full h-50 aspect-video object-fit rounded-sm"
                   />
                 </a>
@@ -98,8 +98,8 @@ function ProjectItem({ data }: { data: Project }) {
                       <Image
                         src={data.projectGalleries.at(index)?.image_url ?? ""}
                         alt=""
-                        width={50}
-                        height={50}
+                        width={1600}
+                        height={1600}
                         className="w-full h-50 aspect-video object-fit rounded-sm"
                       />
                     }

@@ -122,8 +122,8 @@ export function DialogCarousel({
               key={index}
               src={data[index]}
               alt={`Slide ${index + 1}`}
-              width={100}
-              height={100}
+              width={1200}
+              height={1200}
               className={`object-contain w-auto max-h-10 md:max-h-15 rounded-lg hover:cursor-pointer ${index === selectedSnap ? "border-2 border-blue-500" : ""}`}
             />
           ))}
