@@ -17,8 +17,8 @@ export default function ProfileInfoSection() {
           src="/images/img-beach-night.avif"
           className="w-full h-40 md:h-55 object-cover object-[center_40%]"
           alt="Profile"
-          width={100}
-          height={100}
+          width={1600}
+          height={500}
         />
 
         {/* Profile Image */}
